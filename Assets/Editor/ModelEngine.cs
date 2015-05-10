@@ -22,12 +22,12 @@ public class ModelEngine : Editor
     public void OnEnable()
     {
         model = (EditableModel)target;
-        model.DrawEventHandlers += new DrawDelegate(OnDraw);
+        model.DrawEventHandlers += new FFMProject.DrawDelegate(OnDraw);
     }
 
     public void OnDisable()
     {
-        model.DrawEventHandlers -= new DrawDelegate(OnDraw);
+        model.DrawEventHandlers -= new FFMProject.DrawDelegate(OnDraw);
     }
 
     public override void OnInspectorGUI()

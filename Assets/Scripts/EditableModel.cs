@@ -1,11 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public delegate void DrawDelegate();
+namespace FFMProject
+{
+    public delegate void DrawDelegate();
+}
 
 public class EditableModel : MonoBehaviour
 {
-    public event DrawDelegate DrawEventHandlers;
+    public event FFMProject.DrawDelegate DrawEventHandlers;
     public MeshFilter mesh { get { return mesh_; } }
 
 	void Start()
