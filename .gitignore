@@ -50,3 +50,4 @@ Library/*
 *.sln
 *.csproj
 *.suo
+Assets/Scene/*
