@@ -3,26 +3,37 @@ using System.Collections.Generic;
 
 namespace FFMProject
 {
-    enum EAddOperation
+    public enum EPolygonOp
     {
-        eAddOp_Add,
-        eAddOp_Subtract,
-        eAddOp_Split,
-        eAddOp_Union
+        None,
+        Subtract,
+        Split,
+        Union
     }
 
-    class Model
-    {
-        private List<Polygon> polygons = new List<Polygon>();
-
-        Polygon FindPolygon(Ray ray)
+    public class Model : ModelData
+	{
+        public Polygon FindPolygon(Ray ray)
         {
             return null;
         }
 
-        void AddPolygon(Polygon polygon, EAddOperation op)
-        {
-            polygons.Add(polygon);
+		public void AddPolygon (Polygon polygon, EPolygonOp op = EPolygonOp.None)
+		{
+			if (op == EPolygonOp.None) 
+			{
+				polygons_.Add (polygon);
+			}
         }
+
+		public Polygon GetPolygon(int idx)
+		{ 
+			return (Polygon)polygons_[idx];
+		}
+
+		public void Clear()
+		{
+			polygons_.Clear ();
+		}
     }
 }

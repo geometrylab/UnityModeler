@@ -1,0 +1,42 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Editor/Geometry/MeshCompiler.cs">
+    <Files>
+      <File FileName="Assets/Editor/Geometry/Polygon.cs" Line="21" Column="6" />
+      <File FileName="Assets/Editor/Geometry/PolygonDecomposer.cs" Line="20" Column="2" />
+      <File FileName="Assets/Editor/Tools/BoxTool.cs" Line="107" Column="29" />
+      <File FileName="Assets/Editor/ModelEngine.cs" Line="107" Column="28" />
+      <File FileName="Assets/Editor/Geometry/HalfEdgeMesh.cs" Line="1" Column="1" />
+      <File FileName="Assets/Editor/Tools/BaseTool.cs" Line="1" Column="1" />
+      <File FileName="Assets/Editor/Geometry/LoopSubdivision.cs" Line="1" Column="1" />
+      <File FileName="Assets/Editor/Utils/HeightManipulator.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/EditableObject.cs" Line="54" Column="59" />
+      <File FileName="Assets/Editor/Geometry/Model.cs" Line="38" Column="6" />
+      <File FileName="Assets/Editor/Geometry/MeshCompiler.cs" Line="18" Column="2" />
+      <File FileName="Assets/Editor/Tools/PolylineTool.cs" Line="1" Column="1" />
+      <File FileName="Assets/Editor/Tools/PlaceSubdividedMeshTool.cs" Line="1" Column="1" />
+      <File FileName="Assets/Editor/Tools/RectangleTool.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="Assembly-CSharp" expanded="True">
+            <Node name="Scripts" expanded="True" />
+          </Node>
+          <Node name="Assembly-CSharp-Editor" expanded="True">
+            <Node name="Editor" expanded="True">
+              <Node name="Geometry" expanded="True">
+                <Node name="MeshCompiler.cs" selected="True" />
+              </Node>
+              <Node name="Tools" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

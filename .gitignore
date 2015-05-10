@@ -51,3 +51,4 @@ Library/*
 *.csproj
 *.suo
 Assets/Scene/*
+Assets/test.unity

@@ -3,12 +3,15 @@ using UnityEditor;
 using FFMProject;
 using System.Collections;
 
-[CustomEditor(typeof(EditableModel))]
+[CustomEditor(typeof(EditableObject))]
 public class ModelEngine : Editor
 {
-    public EditableModel model;
+	public static ModelEngine the;
+	public EditableObject editableObj;
     public Material material = null;
     public Camera camera = null;
+	public FFMProject.Model model { get { return (Model)editableObj.model; } }
+	public Mesh mesh { get { return editableObj.meshfilter.sharedMesh; } }
 
     static ModelEngine()
     {
@@ -21,13 +24,16 @@ public class ModelEngine : Editor
 
     public void OnEnable()
     {
-        model = (EditableModel)target;
-        model.DrawEventHandlers += new FFMProject.DrawDelegate(OnDraw);
+		editableObj = (EditableObject)target; 
+		the = this;
+		editableObj.DrawEventHandlers += new FFMProject.DrawDelegate(OnDraw);
+		editableObj.ModelCreator = ModelCreator;
     }
 
     public void OnDisable()
     {
-        model.DrawEventHandlers -= new FFMProject.DrawDelegate(OnDraw);
+		editableObj.DrawEventHandlers -= new FFMProject.DrawDelegate(OnDraw);
+		editableObj.ModelCreator = null;
     }
 
     public override void OnInspectorGUI()
@@ -36,6 +42,11 @@ public class ModelEngine : Editor
         GUILayout.Label(" Grid Width ");
         GUILayout.EndHorizontal();
     }
+
+	public ModelData ModelCreator()
+	{
+		return new Model();
+	}
 
     void OnSceneGUI()
     {
@@ -78,12 +89,17 @@ public class ModelEngine : Editor
             e.Use();
         }
 
-        currentTool_.Update(this);
+		currentTool_.Update(this);
     }
+
+	public void UpdateAll()
+	{
+		MeshCompiler.Compile (model, mesh);
+	}
 
     public void OnDraw()
     {
-        currentTool_.Display(this);
+		currentTool_.Display(this);
     }
 
     public Ray ViewRay()
